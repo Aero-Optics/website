@@ -13,11 +13,10 @@ install:
 script:
     - hugo
 
-after_success:
+after_success: |
     if [ -n "$GITHUB_API_KEY_TRAVIS_SPECIAL" ]; then
     git checkout --orphan master
     git rm -rf .
-    # mv public/* .
     rm -rf public hugo_*
     git add -f --ignore-errors --all
     git -c user.name='travis' -c user.email='travis' commit -m init
