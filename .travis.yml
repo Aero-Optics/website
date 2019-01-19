@@ -21,5 +21,5 @@ after_success: |
     rm -rf public hugo_*
     git add -f --ignore-errors --all
     git -c user.name='travis' -c user.email='travis' commit -m init
-    git push -f -q https://$GITHUB_USER:$GITHUB_API_TRAVIS_SECRET@github.com/$TRAVIS_REPO_SLUG master >/dev/null 2>&1
+    git push -f -q https://$GITHUB_USER:$GITHUB_API_TRAVIS_SECRET@github.com/$TRAVIS_REPO_SLUG master
     fi
